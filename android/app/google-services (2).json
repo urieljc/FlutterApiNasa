@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177237399456",
+    "project_id": "nasaimagen",
+    "storage_bucket": "nasaimagen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177237399456:android:2120c3118819a2203336c5",
+        "android_client_info": {
+          "package_name": "com.example.nasaimagen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177237399456-brtrkfine1qn6mvc1s3rqgu1o7rjrrh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdiSGZmxLhQUwlULxtv565N3sEsETnvZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177237399456-brtrkfine1qn6mvc1s3rqgu1o7rjrrh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
