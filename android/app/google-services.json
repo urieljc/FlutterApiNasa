@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "177237399456-eg1i9e1hfqognod8q5j8n1fijv18mm8m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nasaimagen",
+            "certificate_hash": "ec521d4b3bdd8f85b5d3232882e2f884f1a980e2"
+          }
+        },
+        {
           "client_id": "177237399456-brtrkfine1qn6mvc1s3rqgu1o7rjrrh1.apps.googleusercontent.com",
           "client_type": 3
         }
