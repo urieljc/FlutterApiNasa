@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:nasaimagen/config/theme/theme.dart';
+import 'package:nasaimagen/screens/login.dart';
 import 'package:nasaimagen/screens/presentacion.dart';
 
 
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/presentacion',
       routes: {
         '/presentacion': (context) => const PresentacionPage(),
+        '/login':(context)=>const LoginScreen(),
       },
       theme: ThemeApp().theme(),
     );
