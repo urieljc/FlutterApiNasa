@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -11,7 +13,7 @@ class PresentacionPage extends StatefulWidget {
 class _PresentacionPageState extends State<PresentacionPage> {
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     _navegacionToLogin();
   }
