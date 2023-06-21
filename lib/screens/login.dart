@@ -286,7 +286,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const PrinciplaScreen()));
+                                builder: (context) => PrinciplaScreen(user:userCredentialFinal.user,auth:_firebaseAuth ,googleSignIn:_googleSingIn ,)));
                       }
                     },
                     child: Row(children: [

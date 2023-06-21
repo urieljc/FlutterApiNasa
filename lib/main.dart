@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/presentacion': (context) => const PresentacionPage(),
         '/login':(context)=>const LoginScreen(),
-        '/principal':(context)=>const PrinciplaScreen()
+        //'/principal':(context)=>const PrinciplaScreen()
       },
       theme: ThemeApp().theme(),
     );
