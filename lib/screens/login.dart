@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nasaimagen/config/theme/color.dart';
+import 'package:nasaimagen/screens/principla.dart';
 import 'package:neumorphic_button/neumorphic_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -7,8 +10,34 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //dimensiones de la pantalla
     final sizeH = MediaQuery.of(context).size.height;
     final sizeW = MediaQuery.of(context).size.width;
+    //controladores de ingreso de texto
+    TextEditingController email=TextEditingController();
+    TextEditingController password=TextEditingController();
+    //autentificacion de google
+    final FirebaseAuth _firebaseAuth=FirebaseAuth.instance;
+    final GoogleSignIn _googleSingIn=GoogleSignIn();
+    User? user;
+    //estado del formulario
+    final formKey=GlobalKey<FormState>();
+    //funcion de login por google
+    Future loginGoogle() async{
+      final GoogleSignInAccount? googleSignInAccount=await _googleSingIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication=await googleSignInAccount!.authentication;
+      final AuthCredential authCredential=GoogleAuthProvider.credential(
+        idToken: googleSignInAuthentication.idToken,
+        accessToken: googleSignInAuthentication.accessToken
+      );
+      try {
+        final UserCredential userCredential=await _firebaseAuth.signInWithCredential(authCredential);
+        return userCredential;
+      } catch (e) {
+        return null;
+      }
+    }
+    //inicio de la app
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -170,7 +199,15 @@ class LoginScreen extends StatelessWidget {
                             offset: const Offset(4, 7))
                       ]),
                   child: ElevatedButton(
-                    onPressed: (){}, 
+                    onPressed: ()async{
+                      UserCredential? userCredentialFinal=await loginGoogle();
+                      if (userCredentialFinal!=null) {
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(builder:(context)=>PrinciplaScreen())
+                        );
+                      }
+                    }, 
                     child:Row(children: [
                       Image.asset('assets/images/google.png',width: 40,),
                       const Spacer(),
