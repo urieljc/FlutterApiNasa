@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nasaimagen/config/theme/color.dart';
 import 'package:nasaimagen/screens/principla.dart';
-import 'package:neumorphic_button/neumorphic_button.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -33,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: _email.text, password: _password.text);
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, '/principal');
       return userCredential;
     } catch (e) {
